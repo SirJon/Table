@@ -19,3 +19,8 @@ export interface IData {
   price: number;
   currency: Currency;
 }
+
+export interface IDataRows extends IData {
+  checked: boolean;
+  checkbox: JSX.Element;
+}
