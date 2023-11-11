@@ -22,5 +22,8 @@ export interface IData {
 
 export interface IDataRows extends IData {
   checked: boolean;
+}
+
+export interface IDataRowsRender extends IDataRows {
   checkbox: JSX.Element;
 }

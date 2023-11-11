@@ -15,27 +15,12 @@ export const DocumentsApiService = {
     return JSON.parse(response.data) as IData[];
   },
 
-  findOne: async (endpoint: string, id: string) => {
-    const response = await axios.get(`/${endpoint}/${id}`);
-    return JSON.parse(response.data) as IData;
-  },
-
-  create: async (endpoint: string, data: any) => {
+  delete: async (endpoint: string, data: any) => {
     const response = await axios.post(`/${endpoint}`, JSON.stringify(data));
-    return JSON.parse(response.data) as IData;
-  },
-
-  update: async (endpoint: string, data: any) => {
-    const { id } = data;
-    const response = await axios.put(
-      `/${endpoint}/${id}`,
-      JSON.stringify(data)
-    );
-    return JSON.parse(response.data) as IData;
-  },
-
-  delete: async (endpoint: string, id: string) => {
-    const response = await axios.delete(`/${endpoint}/${id}`);
-    return JSON.parse(response.data); //?
+    try {
+      return JSON.parse(response.data);
+    } catch (error) {
+      return 'Не удалось расшифровать ответ'
+    }
   },
 };

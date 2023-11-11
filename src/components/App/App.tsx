@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 import { Theme, presetGpnDefault } from "@consta/uikit/Theme";
 import List from "../List/List";
 import "./App.scss";

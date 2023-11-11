@@ -16,7 +16,9 @@ module.exports = () => {
     count: 10,
   });
   const documents2 = faker.helpers.multiple(createRandomData, {
-    count: 10,
+    count: 15,
   });
-  return { documents1, documents2 };
+
+  const cancel = {};
+  return { documents1, documents2, cancel };
 };
